@@ -67,6 +67,9 @@ echo '[rust]             ' >> $HOME/.config/starship.toml
 echo '# symbol = " "    ' >> $HOME/.config/starship.toml
 
 wal -i $PIC
+if [ ! "$(grep -q 'wal -R -n' $HOME/.profile)" ]; then
+  echo "wal -R -n" >> $HOME/.profile
+fi
 ln -sf $HOME/.config/kitty/colors-kitty.conf $HOME/.cache/wal/colors-kitty.conf
 echo "Setting kitty as new default terminal..."
 sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
