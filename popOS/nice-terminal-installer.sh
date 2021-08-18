@@ -18,6 +18,7 @@ tar -xvf Bibata-Modern-Classic.tar.gz
 sudo mv Bibata-* /usr/share/icons/
 sudo update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Bibata-Modern-Classic/index.theme 50
 sudo update-alternatives --set x-cursor-theme /usr/share/icons/Bibata-Modern-Classic/index.theme
+gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 echo "Installing fonts...(Dauert minimal xd)"
 sleep 2
 git clone https://github.com/ryanoasis/nerd-fonts.git
