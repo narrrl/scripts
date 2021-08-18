@@ -3,8 +3,8 @@ PIC="$(cd "$(dirname "$1")"; pwd)/$(basename "$1")"
 
 if [ -z "$1" ]
   then
-    echo "No path to wallpaper provided"
-    exit -1
+    PIC="$(gsettings get org.gnome.desktop.background picture-uri | sed -e "s/^'//" -e "s/'$//" | awk -F'^file://' '{print $2}')"
+    echo "No wallpaper provided, using current wallpaper\n$PIC"
 fi
 
 echo "Installing kitty and dependencies..."
