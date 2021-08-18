@@ -48,7 +48,9 @@ echo "                                                   " >> $HOME/.config/kitt
 echo "window_padding_width 5 10                          " >> $HOME/.config/kitty/kitty.conf
 echo "Installing starship prompt..."
 sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-echo 'eval "$(starship init bash)"' >> $HOME/.bashrc
+if [ ! "$(grep -q 'eval "$(starship init bash)"' $HOME/.bashrc)" ]; then
+  echo 'eval "$(starship init bash)"' >> $HOME/.bashrc
+fi
 echo 'add_newline = false' > $HOME/.config/starship.toml
 echo '[character]        ' >> $HOME/.config/starship.toml
 echo 'success_symbol = ""' >> $HOME/.config/starship.toml
