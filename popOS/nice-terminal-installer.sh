@@ -8,9 +8,9 @@ if [ -z "$1" ]
 fi
 
 echo "Installing kitty and dependencies..."
-sudo apt-get install git imagemagick kitty python3 python3-pip -y &> /dev/null
+sudo apt-get install git imagemagick kitty python3 python3-pip -y > /dev/null
 echo "Installing pywal for theming"
-sudo pip3 install pywal &> /dev/null
+sudo pip3 install pywal > /dev/null
 cd /tmp
 echo "Installing cursor..."
 wget "https://github.com/ful1e5/Bibata_Cursor/releases/download/v1.1.2/Bibata-Modern-Classic.tar.gz"
@@ -73,7 +73,24 @@ echo '[rust]             ' >> $HOME/.config/starship.toml
 echo '# symbol = " "    ' >> $HOME/.config/starship.toml
 
 wal -i $PIC
+if [ ! "$(grep -q 'wal -R -n' $HOME/.profile)" ]; then
+  echo "wal -R -n" >> $HOME/.profile
+fi
 ln -sf $HOME/.config/kitty/colors-kitty.conf $HOME/.cache/wal/colors-kitty.conf
 echo "Setting kitty as new default terminal..."
 sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
+printf "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣬⡛⣿⣿⣿⣯⢻\n"
+printf "⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⢻⣿⣿⢟⣻⣿⣿⣿⣿⣿⣿⣮⡻⣿⣿⣧\n"
+printf "⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣆⠻⡫⣢⠿⣿⣿⣿⣿⣿⣿⣿⣷⣜⢻⣿\n"
+printf "⣿⣿⡏⣿⣿⣨⣝⠿⣿⣿⣿⣿⣿⢕⠸⣛⣩⣥⣄⣩⢝⣛⡿⠿⣿⣿⣆⢝\n"
+printf "⣿⣿⢡⣸⣿⣏⣿⣿⣶⣯⣙⠫⢺⣿⣷⡈⣿⣿⣿⣿⡿⠿⢿⣟⣒⣋⣙⠊\n"
+printf "⣿⡏⡿⣛⣍⢿⣮⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
+printf "⣿⢱⣾⣿⣿⣿⣝⡮⡻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⣋⣻⣿⣿⣿⣿\n"
+printf "⢿⢸⣿⣿⣿⣿⣿⣿⣷⣽⣿⣿⣿⣿⣿⣿⣿⡕⣡⣴⣶⣿⣿⣿⡟⣿⣿⣿\n"
+printf "⣦⡸⣿⣿⣿⣿⣿⣿⡛⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿\n"
+printf "⢛⠷⡹⣿⠋⣉⣠⣤⣶⣶⣿⣿⣿⣿⣿⣿⡿⠿⢿⣿⣿⣿⣿⣿⣷⢹⣿⣿\n"
+printf "⣷⡝⣿⡞⣿⣿⣿⣿⣿⣿⣿⣿⡟⠋⠁⣠⣤⣤⣦⣽⣿⣿⣿⡿⠋⠘⣿⣿\n"
+printf "⣿⣿⡹⣿⡼⣿⣿⣿⣿⣿⣿⣿⣧⡰⣿⣿⣿⣿⣿⣹⡿⠟⠉⡀⠄⠄⢿⣿\n"
+printf "⣿⣿⣿⣽⣿⣼⣛⠿⠿⣿⣿⣿⣿⣿⣯⣿⠿⢟⣻⡽⢚⣤⡞⠄⠄⠄⢸⣿\n"
 echo "Done!"
+exit 0
