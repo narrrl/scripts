@@ -8,9 +8,9 @@ if [ -z "$1" ]
 fi
 
 echo "Installing kitty and dependencies..."
-sudo apt-get install git imagemagick kitty python3 python3-pip -y &> /dev/null
+sudo apt-get install git imagemagick kitty python3 python3-pip -y 2> /dev/null
 echo "Installing pywal for theming"
-sudo pip3 install pywal &> /dev/null
+sudo pip3 install pywal 2> /dev/null
 cd /tmp
 echo "Installing fonts...(Dauert minimal xd)"
 sleep 2
