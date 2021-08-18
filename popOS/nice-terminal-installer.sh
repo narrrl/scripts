@@ -12,6 +12,12 @@ sudo apt-get install git imagemagick kitty python3 python3-pip -y &> /dev/null
 echo "Installing pywal for theming"
 sudo pip3 install pywal &> /dev/null
 cd /tmp
+echo "Installing cursor..."
+wget "https://github.com/ful1e5/Bibata_Cursor/releases/download/v1.1.2/Bibata-Modern-Classic.tar.gz"
+tar -xvf Bibata-Modern-Classic.tar.gz
+sudo mv Bibata-* /usr/share/icons/
+sudo update-alternatives --install /usr/share/icons/default/index.theme x-cursor-theme /usr/share/icons/Bibata-Modern-Classic/index.theme 50
+sudo update-alternatives --set x-cursor-theme /usr/share/icons/Bibata-Modern-Classic/index.theme
 echo "Installing fonts...(Dauert minimal xd)"
 sleep 2
 git clone https://github.com/ryanoasis/nerd-fonts.git
