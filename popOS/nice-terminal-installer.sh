@@ -68,4 +68,6 @@ echo '# symbol = " "    ' >> $HOME/.config/starship.toml
 
 wal -i $PIC
 ln -sf $HOME/.config/kitty/colors-kitty.conf $HOME/.cache/wal/colors-kitty.conf
+echo "Setting kitty as new default terminal..."
+sudo update-alternatives --set x-terminal-emulator /usr/bin/kitty
 echo "Done!"
