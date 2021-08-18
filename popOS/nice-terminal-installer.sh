@@ -21,7 +21,7 @@ sudo update-alternatives --set x-cursor-theme /usr/share/icons/Bibata-Modern-Cla
 gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 echo "Installing fonts...(Dauert minimal xd)"
 sleep 2
-git clone https://github.com/ryanoasis/nerd-fonts.git
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git
 cd nerd-fonts
 sudo ./install.sh -S FiraMono
 sudo ./install.sh -S FiraCode
